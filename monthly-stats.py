@@ -2,24 +2,26 @@ import json
 import requests
 import time
 from bs4 import BeautifulSoup
-data = {}
-data['2016'] = {}
-data_list = []
-page = 'https://www.springfieldcrimealert.com/crime_stats_2016.php'
-r = requests.get(page)
-soup = BeautifulSoup(r.text,'html.parser')
-table = soup.table
-rows = table.find_all('tr')
-headers = rows[0]
-columns =[cell.text.strip().lower() for cell in headers.find_all('td')]
-months = columns[1:]
 
-for row in rows[1:]:
-    cols = [cell.text.strip().lower() for cell in row.find_all('td')]
-    incident = cols[0]
-    data['2016'][incident] = list(zip(months,cols[1:]))
-with open('text4.txt','w') as f:
-    json.dump(data_list,f)
+data = {}
+page = 'https://www.springfieldcrimealert.com/crime_stats_'
+for year in range(2004,2017):
+    data[str(year)] = {}
+    r = requests.get(page + str(year) + '.php')
+    soup = BeautifulSoup(r.text,'html.parser')
+    table = soup.table
+    rows = table.find_all('tr')
+    for row in rows[1:]:
+        cols = [cell.text.strip().lower() for cell in row.find_all('td')]
+        incident = cols[0]
+        amounts = [float(i) for i in cols[1:]]
+        data[str(year)][incident] = amounts
+    time.sleep(2)
+print(data['2016']['suicide'])
+
+with open('text7.txt','w') as f:
+    json.dump(data,f)
+    
 print('complete')
     
 
