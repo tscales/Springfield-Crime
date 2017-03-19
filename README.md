@@ -14,3 +14,13 @@ The data cannot be verified as complete as the collection methods for Springfiel
 
 ##### External Factors. 
 Given that 12 years of data are presented in the dataset the user must be careful in analyzing data without knowing what changes in reporting methods.
+
+For example: taken on its own the following data suggests a decline in non-injury vehicle accidents beginning in 2014
+
+![va no overylay](img/va-plot.PNG?raw=true "va no overlay")
+
+However, there is a second report type. past non-injury vehicle accidents, look what happens when you overlay this graph with the former.
+
+![va overlay](img/va-plot-2.PNG?raw=true "va overlay")
+
+The data suggests a change in reporting procedures in which more non injury vehicle accidents are labeled as past rather than not, however this has not been verified. 
