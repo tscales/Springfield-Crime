@@ -1,12 +1,15 @@
 # Springfield-Crime Data
 
-The Springfield-Crime dataset consists of monthly totals of police reports filed in Springfield Missouri between January, 2004,and December, 2016. The data is stored in a pandas multindex dataframe to allow for easy analysis of the data in full or within specified time periods. A series of Jupyter Notebooks are included to show how the data was visualized. 
+The Springfield-Crime dataset consists of 500,000 police reports filed in Springfield, Missouri between January, 2004 and December, 2016. A second Data-set is provided that includes month by month incident totals. A series of Jupyter Notebooks are included to show analysis. 
 
-  * [Basic Analysis](notebooks/Basic%20Analysis.ipynb)
+  * [Graphs](notebooks/Basic%20Analysis.ipynb)
+  * [Heat Maps](notebooks/Heat%20Maps.ipynb)
+  
+![police-report-animation](img/heat-map-animation.gif)
 
 ### Collection Method
 
-Data was collected from the website SpringfieldCrimeAlert using the Pandas read_html() method. See Scraper.py for details. 
+Data was collected from the now defunct website SpringfieldCrimeAlert using the Pandas read_html() method. A sample script, Scraper.py is provided to show how data was collected.  
 
 ### Limitations
 
